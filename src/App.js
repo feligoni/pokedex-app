@@ -39,7 +39,12 @@ function App() {
       await loadPokemon(response.results);
       setLoading(false);
     }
-    fetchData();
+    const timer = setTimeout(() => {
+      fetchData();
+    }, 300);
+    return () => {
+      clearTimeout(timer);
+    };
   }, []);
 
   const next = async () => {
