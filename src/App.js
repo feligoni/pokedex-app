@@ -23,10 +23,10 @@ function App() {
     return pokemonData.filter((pokemonData) => {
       if (query >= 0) {
         const pokemonName = pokemonData.id.toString();
-        return pokemonName.includes(query);
+        return pokemonName.includes(query.toLowerCase());
       } else {
         const pokemonName = pokemonData.name.toLowerCase();
-        return pokemonName.includes(query);
+        return pokemonName.includes(query.toLowerCase());
       }
     });
   };
